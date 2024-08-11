@@ -1,69 +1,51 @@
-# SVM Classification with Anomaly Detection and Poisoning Attacks
 
-## Overview
 
-This project demonstrates the use of Support Vector Machines (SVM) for classification on the MNIST dataset, along with techniques for detecting and handling poisoned data. It includes implementations of label flipping and data injection attacks and evaluates the performance of the SVM model with and without anomaly detection using Isolation Forest.
+```markdown
+# SVM with Anomaly Detection on MNIST
 
-## Features
+This project demonstrates the use of Support Vector Machines (SVM) with and without anomaly detection on the MNIST dataset. It explores the impact of label flipping and data injection attacks on SVM performance and evaluates the effectiveness of Isolation Forest for anomaly detection.
 
-- **Data Loading and Preprocessing**: Fetches and preprocesses the MNIST dataset, including scaling, normalization, and PCA.
-- **Attack Simulations**: Implements label flipping and data injection attacks to simulate data poisoning.
-- **Anomaly Detection**: Uses Isolation Forest to detect and remove poisoned data.
-- **Model Training and Evaluation**: Trains SVM models and evaluates their performance using metrics such as accuracy, precision, recall, and F1-score.
-- **Visualization**: Plots Precision-Recall curves, Confusion Matrices, Decision Boundaries (for 2D feature spaces), and ROC curves. Includes bar plots comparing accuracies across different scenarios.
+## Installation
 
-## Requirements
-
-- Python 3.x
-- NumPy
-- Matplotlib
-- scikit-learn
-- SciPy
-
-You can install the required packages using pip:
+Install the required libraries using:
 
 ```bash
 pip install numpy matplotlib scikit-learn scipy
-
+```
 
 ## Usage
 
-1. **Load and Preprocess Data**:
-   - Fetches the MNIST dataset and applies scaling, normalization, and PCA.
+1. Clone the repository:
 
-2. **Simulate Attacks**:
-   - **Label Flipping Attack**: Randomly flips a proportion of labels.
-   - **Data Injection Attack**: Injects noisy samples with altered labels.
+    ```bash
+    git clone <repository-url>
+    cd <repository-directory>
+    ```
 
-3. **Train and Evaluate SVM**:
-   - Train SVM models with and without anomaly detection.
-   - Evaluate models using accuracy, precision, recall, and F1-score.
+2. Run the script:
 
-4. **Visualize Results**:
-   - View Precision-Recall curves, Confusion Matrices, Decision Boundaries (for 2D data), and ROC curves.
-   - Compare model accuracies in different scenarios using bar plots.
+    ```bash
+    python svm_anomaly_detection.py
+    ```
 
-## Example
+## Features
 
-To run the analysis and generate plots, execute the script:
+- **Data Preparation**: Loads and preprocesses the MNIST dataset (scaling, normalization, PCA).
+- **Attacks**: Simulates label flipping and data injection attacks.
+- **Evaluation**: Trains SVM with and without anomaly detection (Isolation Forest).
+- **Metrics**: Displays accuracy, precision, recall, F1-score, confusion matrix, ROC, and Precision-Recall curves.
 
-```bash
-python svm_poisoning_detection.py
-```
+## Results
 
-## Code Explanation
+The script provides:
+- Performance metrics and confusion matrix for standard and anomaly-detected SVM.
+- Bar plots comparing SVM accuracy under different conditions.
 
-- **Data Loading and Preprocessing**: `load_and_preprocess_data` function handles data fetching, scaling, normalization, and PCA transformation.
-- **Poisoning Attacks**: Functions `label_flipping_attack` and `data_injection_attack` simulate different types of data poisoning.
-- **Anomaly Detection**: The `remove_poisoned_data` function uses Isolation Forest to clean the training data.
-- **Model Training and Evaluation**: The `train_and_evaluate_svm` function trains the SVM model and evaluates its performance on test data.
-- **Visualization**: Generates various plots to visualize model performance and results.
+## Dependencies
 
+- Python 3.x
+- `numpy`
+- `matplotlib`
+- `scikit-learn`
+- `scipy`
 
-
-## Acknowledgments
-
-- **MNIST Dataset**: Provided by [OpenML](https://www.openml.org/d/554).
-- **Isolation Forest**: Anomaly detection algorithm used for identifying outliers.
-
-```
