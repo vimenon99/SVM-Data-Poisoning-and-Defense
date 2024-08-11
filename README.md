@@ -1,6 +1,3 @@
-Here's a `README.md` file for your project:
-
-```markdown
 # SVM Classification with Anomaly Detection and Poisoning Attacks
 
 ## Overview
@@ -27,7 +24,7 @@ You can install the required packages using pip:
 
 ```bash
 pip install numpy matplotlib scikit-learn scipy
-```
+
 
 ## Usage
 
